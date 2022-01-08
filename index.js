@@ -38,8 +38,8 @@ app.get('/placement/:name', (req, res) => {
 });
 
 // find by type
-app.get('/type/:name', (req, res) => {
-    var name = req.params.name;
+app.get('/type/:type', (req, res) => {
+    var type = req.params.type;
     fs.readFile("./data.json", "utf8", (err, jsonString) => {
         if (err) {
             res.send({
@@ -50,7 +50,7 @@ app.get('/type/:name', (req, res) => {
             var obj = JSON.parse(jsonString);
             var array = [];
             for (var i = 0; i < obj.length; i++) {
-                if (obj[i].type.toLowerCase().includes(name.toLowerCase())) {
+                if (obj[i].type.toLowerCase().includes(type.toLowerCase())) {
                     array.push(obj[i])
                 }
             }
@@ -64,9 +64,9 @@ app.get('/type/:name', (req, res) => {
 });
 
 //find by timestamp
-app.get('/time/:timeid', (req, res) => {
-    var timeid = parseInt(req.params.timeid);
-    var date = new Date(timeid * 1000);
+app.get('/time/:timestamp', (req, res) => {
+    var timestamp = parseInt(req.params.timestamp);
+    var date = new Date(timestamp * 1000);
     var year = date.getFullYear();
     var month = date.getMonth() + 1;
     var day = date.getDate();
@@ -101,8 +101,8 @@ app.get('/time/:timeid', (req, res) => {
 });
 
 // find by tag
-app.get('/tag/:name', (req, res) => {
-    var name = req.params.name;
+app.get('/tag/:tag', (req, res) => {
+    var tag = req.params.tag;
     fs.readFile("./data.json", "utf8", (err, jsonString) => {
         if (err) {
             res.send({
@@ -114,7 +114,7 @@ app.get('/tag/:name', (req, res) => {
             var array = [];
             for (var i = 0; i < obj.length; i++) {
                 for (var b = 0; b < obj[i].tags.length; b++) {
-                    if (obj[i].tags[b].toLowerCase().includes(name.toLowerCase())) {
+                    if (obj[i].tags[b].toLowerCase().includes(tag.toLowerCase())) {
                         array.push(obj[i])
                     }
                 }
