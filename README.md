@@ -5,7 +5,17 @@ https://www.notion.so/JSON-Manipulation-aa2bd000675245ee830e3c781c1f5c27
 ```
 git clone https://github.com/msyahrul801/json-manipulation.git
 ```
+## Build
+```
+npm install
+```
+## Start
+```
+npm start
+```
+
 # How To Use
+All Request is GET
 ## Find by placement name
 ```
 http://localhost:3000/placement/:name
