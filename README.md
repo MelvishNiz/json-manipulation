@@ -1,27 +1,24 @@
-# Download
-git clone https://github.com/msyahrul801/json-manipulation.git
-
-## json-manipulation
-```
+# json-manipulation
 https://www.notion.so/JSON-Manipulation-aa2bd000675245ee830e3c781c1f5c27
-```
 
-## find by placement name
+## Download
+```
+git clone https://github.com/msyahrul801/json-manipulation.git
+```
+# How To Use
+## Find by placement name
 ```
 http://localhost:3000/placement/:name
 ```
-
-## find by type
+## Find by type
 ```
 http://localhost:3000/type/:type
 ```
-
-## find by timestamp
+## Find by timestamp
 ```
 http://localhost:3000/time/:timestamp
 ```
-
-## find by tag
+## Find by tag
 ```
 http://localhost:3000/tag/:tag
 ```
